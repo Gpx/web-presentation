@@ -11,7 +11,12 @@ import {
   List,
   Quote,
   Slide,
-  Text
+  Text,
+  Image,
+  CodePane,
+  Code,
+  Layout,
+  Fill,
 } from "spectacle";
 
 // Import image preloader util
@@ -24,20 +29,23 @@ import createTheme from "spectacle/lib/themes/default";
 require("normalize.css");
 require("spectacle/lib/themes/default/index.css");
 
-
 const images = {
-  city: require("../assets/city.jpg"),
-  kat: require("../assets/kat.png"),
-  logo: require("../assets/formidable-logo.svg"),
-  markdown: require("../assets/markdown.png")
+  equilibrium: require("../assets/equilibrium.jpg"),
+  oldOffice: require("../assets/old-office.jpg"),
+  twitter: require("../assets/original-twitter.png"),
+  cry: require("../assets/crying_baby-wide.jpg"),
+  travelperkers: require("../assets/travelperkers.jpg"),
+  createReactApp: require("../assets/create-react-app.gif"),
+  backToTheFuture: require("../assets/back-to-the-future.jpg"),
+  hayk: require("../assets/hayk-ananyan.jpg"),
 };
 
 preloader(images);
 
 const theme = createTheme({
   primary: "white",
-  secondary: "#1F2022",
-  tertiary: "#03A9FC",
+  secondary: "#1396e4",
+  tertiary: "#07E976",
   quartenary: "#CECECE"
 }, {
   primary: "Montserrat",
@@ -47,38 +55,187 @@ const theme = createTheme({
 export default class Presentation extends React.Component {
   render() {
     return (
-      <Deck transition={["zoom", "slide"]} transitionDuration={500} theme={theme}>
-        <Slide transition={["zoom"]} bgColor="primary">
-          <Heading size={1} fit caps lineHeight={1} textColor="secondary">
-            Spectacle Boilerplate
+      <Deck progress="number" transition={[]} theme={theme}>
+        <Slide>
+          <Heading size={1} fit lineHeight={1} textColor="secondary">
+            web
           </Heading>
           <Text margin="10px 0 0" textColor="tertiary" size={1} fit bold>
-            open the presentation/index.js file to get started
+            the why, what and what next
           </Text>
         </Slide>
-        <Slide transition={["fade"]} bgColor="tertiary">
-          <Heading size={6} textColor="primary" caps>Typography</Heading>
-          <Heading size={1} textColor="secondary">Heading 1</Heading>
-          <Heading size={2} textColor="secondary">Heading 2</Heading>
-          <Heading size={3} textColor="secondary">Heading 3</Heading>
-          <Heading size={4} textColor="secondary">Heading 4</Heading>
-          <Heading size={5} textColor="secondary">Heading 5</Heading>
-          <Text size={6} textColor="secondary">Standard text</Text>
+        <Slide>
+          <Layout>
+            <Fill>
+              <Code>web_client</Code>
+            </Fill>
+            <Fill>
+              <Code>web</Code>
+            </Fill>
+          </Layout>
         </Slide>
-        <Slide transition={["fade"]} bgColor="primary" textColor="tertiary">
-          <Heading size={6} textColor="secondary" caps>Standard List</Heading>
+        <Slide>
           <List>
-            <ListItem>Item 1</ListItem>
-            <ListItem>Item 2</ListItem>
-            <ListItem>Item 3</ListItem>
-            <ListItem>Item 4</ListItem>
+            <ListItem>Why we decided to move</ListItem>
+            <ListItem>What we implemented</ListItem>
+            <ListItem>What we're planning next</ListItem>
           </List>
         </Slide>
-        <Slide transition={["fade"]} bgColor="secondary" textColor="primary">
-          <BlockQuote>
-            <Quote>Example Quote</Quote>
-            <Cite>Author</Cite>
-          </BlockQuote>
+        <Slide>
+          <Image display="inline" src={images.equilibrium} width="100vmin" />
+        </Slide>
+        <Slide>
+          <Image display="inline" src={images.oldOffice} width="100vmin" />
+        </Slide>
+        <Slide>
+          <Image display="inline" src={images.twitter} width="100vmin" />
+        </Slide>
+        <Slide>
+          <CodePane lang="json">
+{`{
+  "id":20151,
+  "is_manually_booked":false,
+  "created_at":"2017-05-21T17:00:47.596733Z",
+  "purpose":"Satin Intro London",
+  "reference":"",
+  "currency":"EUR"
+  ,"expiry":"2017-05-22T17:11:36.057459Z",
+  "status":"saved",
+  "last_status":"saved",
+  "status_changed_at":"2017-05-21T17:00:47.596708Z",
+  "billing_center":2036,
+  "user":7572,
+  "manual_booker":null,
+  "reason_manual_booking":null,
+  "policy":{
+    "id":2065,
+    "company":1965,
+    "company_name":"DevScore",
+    "name":"DevScore standard policy",
+    "active":true,
+    "standard":3,
+    "level":"standard",
+    "is_company_default":true,
+    "rule_allow_out_of_policy":true,
+    "rule_require_approval":"none",
+    "rule_hotel_max_stars":5,
+    "rule_hotel_booking_window":0,
+    "rule_hotel_budget_amount":null,
+    "rule_hotel_budget_currency":"EUR",
+    "rule_flight_max_cabin_class":"first",
+    "rule_flight_booking_window":0},
+    "requirements":[
+      {
+        "id":24398,"type":"flight",
+        "selected_providers":null,
+        "one_way":false,
+        "origin_schema":"Sky",
+        "origin":"PARI",
+          "origin_name":"Paris (All), France",
+          "origin_latlon":"48.879168,2.36215",
+          "destination_schema":"Sky",
+          "destination":"LOND",
+          "destination_name":"London (All), United Kingdom",
+          "destination_latlon":"51.506136,-0.120054",
+          "start_date":"2017-06-08",
+          "start_date_anchor":"",
+          "start_time_from":"00:00:00",
+          "start_time_until":"23:59:59",
+          "end_date":"2017-06-09",
+          "end_date_anchor":"",
+          "end_time_from":"00:00:00",
+          "end_time_until":"23:59:59",`}
+          </CodePane>
+        </Slide>
+        <Slide>
+          <Image display="inline" src={images.cry} width="100vmin" />
+        </Slide>
+        <Slide>
+          <Image display="inline" src={images.travelperkers} width="100vmin" />
+        </Slide>
+        <Slide>
+          <Heading size={1} fit textColor="secondary">
+            <Code>create-react-app</Code>
+          </Heading>
+          <Text margin="10px 0 0" textColor="tertiary" size={1} fit bold>
+            FTW!!
+          </Text>
+        </Slide>
+        <Slide>
+          <Image display="inline" src={images.createReactApp} width="100vmin" />
+        </Slide>
+        <Slide>
+          <List>
+            <ListItem>Webpack</ListItem>
+            <ListItem>Babel</ListItem>
+            <ListItem>Jest</ListItem>
+            <ListItem>Lint</ListItem>
+            <ListItem>Free upgrades</ListItem>
+          </List>
+        </Slide>
+        <Slide>
+          <Heading size={1} fit textColor="secondary">&lt;Layout&gt; components</Heading>
+          <Text margin="10px 0 0" textColor="tertiary" size={1} fit bold>
+            with some help from styled-components 💅
+          </Text>
+        </Slide>
+        <Slide>
+          <Heading size={1} fit textColor="secondary">Prettier</Heading>
+          <Text margin="10px 0 0" textColor="tertiary" size={1} fit bold>
+            same style guide for everyone
+          </Text>
+        </Slide>
+        <Slide>
+          <Heading size={1} fit textColor="secondary">Jest + snapshot testing</Heading>
+        </Slide>
+        <Slide>
+          <Heading size={1} fit textColor="secondary">We don't need Flux</Heading>
+          <Text margin="10px 0 0" textColor="tertiary" size={1} bold>
+            (for now)
+          </Text>
+        </Slide>
+        <Slide>
+          <Heading size={1} fit textColor="secondary">Flow</Heading>
+          <Text margin="10px 0 0" textColor="tertiary" size={1} fit bold>
+            great when it works
+          </Text>
+        </Slide>
+        <Slide>
+          <Heading margin="0 0 10px" size={2} textColor="secondary">What's next?</Heading>
+          <Image display="inline" src={images.backToTheFuture} width="100vmin" />
+        </Slide>
+        <Slide>
+          <Heading size={1} fit textColor="secondary">✨New API✨</Heading>
+        </Slide>
+        <Slide>
+          <Heading size={1} fit textColor="secondary">Move pages from web_client to web</Heading>
+          <List>
+            <ListItem>Users</ListItem>
+            <ListItem>Invoices</ListItem>
+            <ListItem>Reporting</ListItem>
+            <ListItem>Trips</ListItem>
+          </List>
+        </Slide>
+        <Slide>
+          <Heading size={1} fit textColor="secondary">Add a state manager</Heading>
+        </Slide>
+        <Slide>
+          <Heading size={1} fit textColor="secondary">TravelPerk Mobile</Heading>
+          <Text margin="10px 0 0" textColor="tertiary" size={1} fit bold>
+            Maybe a completely separated app
+          </Text>
+        </Slide>
+        <Slide>
+          <Heading fit textColor="secondary">Don't call it responsive</Heading>
+          <Image display="inline" src={images.hayk} width="100vmin" />
+        </Slide>
+        <Slide>
+          <Heading size={1} fit textColor="secondary">
+            Frontend development is such a pain!
+          </Heading>
+          <Heading size={1} fit textColor="secondary">
+            But it doesn't have to be...
+          </Heading>
         </Slide>
       </Deck>
     );
