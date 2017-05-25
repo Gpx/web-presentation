@@ -77,7 +77,7 @@ export default class Presentation extends React.Component {
         <Slide>
           <List>
             <ListItem>Why we decided to move</ListItem>
-            <ListItem>What we implemented</ListItem>
+            <ListItem>What we learned</ListItem>
             <ListItem>What we're planning next</ListItem>
           </List>
         </Slide>
@@ -215,9 +215,6 @@ export default class Presentation extends React.Component {
             <ListItem>Reporting</ListItem>
             <ListItem>Trips</ListItem>
           </List>
-        </Slide>
-        <Slide>
-          <Heading size={1} fit textColor="secondary">Add a state manager</Heading>
         </Slide>
         <Slide>
           <Heading size={1} fit textColor="secondary">TravelPerk Mobile</Heading>
